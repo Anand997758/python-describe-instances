@@ -22,3 +22,5 @@ print(f'Instances in state "{INSTANCE_STATE}":')
 
 for instance in instances:
     print(f'  - Instance ID: {instance.id}')
+
+    
