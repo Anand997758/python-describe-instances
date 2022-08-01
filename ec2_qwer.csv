@@ -1,0 +1,8 @@
+sno,instance_id,instance_type,key_name,public_ip_address,private_ip_address
+1,i-01668bb2ce799d504,t2.micro,own-key,,172.31.40.154
+2,i-0c62612d078c46a96,t2.micro,own-key,52.64.65.193,172.31.34.244
+3,i-071e627e55a925a31,t2.micro,reddy,3.89.45.154,172.31.34.141
+4,i-0df37fcc81ed5bf48,t2.micro,reddy,54.221.182.210,172.31.22.119
+5,i-024dc99a4ffc43990,t2.micro,reddy,54.196.162.108,172.31.83.200
+6,i-08848c317eb74e3ee,t2.micro,reddy,54.152.176.247,172.31.94.112
+7,i-09c6a7e74de0a4012,t2.micro,pavan.pem,34.217.127.169,172.31.15.64

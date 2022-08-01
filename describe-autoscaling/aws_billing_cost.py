@@ -1,12 +1,16 @@
 import boto3
-client=boto3.client('ce')
+
+client = boto3.client('ce',region_name='us-east-1')
+
 response = client.get_cost_and_usage(
     TimePeriod={
-                  ##Year-Month-Date
-        'Start': '2022-07-10',
-        'End': '2022-07-11'
+        'Start': '2022-07-01',
+        'End': '2022-08-01'
     },
-    Granularity='DAILY',
-    Metrics=['BlendedCost']
-    )
+    Granularity='MONTHLY',
+    Metrics=[
+        'AmortizedCost',
+    ]
+)
+
 print(response)

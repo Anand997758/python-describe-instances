@@ -1,26 +1,18 @@
-#!/usr/bin/env python3
-
 import boto3
 
-AWS_REGION = "ap-southeast-2"
-EC2_RESOURCE = boto3.resource('ec2', region_name=AWS_REGION)
-INSTANCE_STATE = 'running'
+client = boto3.client('ce',region_name='us-east-1')
 
-
-instances = EC2_RESOURCE.instances.filter(
-    Filters=[
-        {
-            'Name': 'instance-state-name',
-            'Values': [
-                INSTANCE_STATE
-            ]
-        }
+response = client.get_cost_and_usage(
+    TimePeriod={
+        'Start': '2022-07-01',
+        'End': '2022-08-01'
+    },
+    Granularity='MONTHLY',
+    Metrics=[
+        'AmortizedCost',
     ]
 )
 
-print(f'Instances in state "{INSTANCE_STATE}":')
-
-for instance in instances:
-    print(f'  - Instance ID: {instance.id}')
+print(response)
 
     
